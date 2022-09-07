@@ -1,0 +1,5 @@
+type="frontend"
+
+[commands]
+dev = "nx run frontend:dev"
+build = "nx run frontend:build"

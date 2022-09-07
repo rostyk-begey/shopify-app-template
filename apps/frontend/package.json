@@ -1,0 +1,9 @@
+{
+  "name": "vite-project",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build --outDir ../../dist/apps/server/public",
+    "serve": "vite preview"
+  }
+}

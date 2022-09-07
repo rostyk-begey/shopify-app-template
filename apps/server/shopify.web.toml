@@ -1,0 +1,4 @@
+type="backend"
+
+[commands]
+dev = "nx run nest:serve"

@@ -1,0 +1,61 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/frontend/src",
+  "projectType": "application",
+  "targets": {
+    "build1": {
+      "executor": "nx-plugin-vite:build",
+      "options": {
+        "outDir": "dist/apps/frontend",
+        "configFile": "apps/frontend/vite.config.ts",
+        "watch": false,
+        "write": true,
+        "emitAtRootLevel": true,
+        "manifest": true
+      }
+    },
+    "dev": {
+      "executor": "nx:run-script",
+      "options": {
+        "script": "dev"
+      }
+    },
+    "build": {
+      "executor": "nx:run-script",
+      "options": {
+        "script": "build"
+      }
+    },
+    "serve": {
+      "executor": "nx-plugin-vite:serve",
+      "options": {
+        "configFile": "./vite.config.ts",
+        "port": 3000,
+        "host": false,
+        "https": false
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/frontend/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/frontend"],
+      "options": {
+        "jestConfig": "apps/frontend/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "preview": {
+      "executor": "nx-plugin-vite:preview",
+      "options": {
+        "configFile": "apps/frontend/vite.config.ts"
+      }
+    }
+  },
+  "tags": []
+}
