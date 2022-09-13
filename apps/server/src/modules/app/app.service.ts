@@ -1,5 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { LATEST_API_VERSION, Shopify } from '@shopify/shopify-api';
+import { Shopify } from '@shopify/shopify-api';
 import { ConfigService } from '@nestjs/config';
 import { ShopifyConfig } from '../../types/config';
 
@@ -9,11 +9,8 @@ export class AppService {
 
   private readonly shopifyConfig: ShopifyConfig;
 
-  private readonly dbPath: string;
-
   constructor(private readonly configService: ConfigService) {
     this.shopifyConfig = configService.get('shopify', { infer: true });
-    this.dbPath = configService.get('dbPath', { infer: true });
   }
 
   init() {
@@ -26,7 +23,7 @@ export class AppService {
       API_VERSION: this.shopifyConfig.apiVersion,
       IS_EMBEDDED_APP: this.shopifyConfig.isEmbeddedApp,
       // This should be replaced with your preferred storage strategy
-      SESSION_STORAGE: new Shopify.Session.SQLiteSessionStorage(this.dbPath),
+      SESSION_STORAGE: new Shopify.Session.MemorySessionStorage(),
     });
 
     this.logger.log('Shopify app initialized');

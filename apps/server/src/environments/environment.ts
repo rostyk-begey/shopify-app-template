@@ -8,8 +8,7 @@ export const load = (): Config => ({
     process.env.BACKEND_PORT || process.env.PORT || process.env.port,
     10,
   ),
-  dbPath: `${process.cwd()}/database.sqlite`,
-  staticsPath: join(process.cwd(), process.env.STATIC_PATH),
+  staticsPath: join(process.cwd(), '..', 'frontend'),
   useOnlineTokens: false,
   billing: {
     required: false,

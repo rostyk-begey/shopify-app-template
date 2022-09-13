@@ -13,8 +13,8 @@ describe('AppService', () => {
     service = app.get<AppService>(AppService);
   });
 
-  describe('getData', () => {
-    it('should defined', () => {
+  describe('service', () => {
+    it('should be defined', () => {
       expect(service).toBeDefined();
     });
   });

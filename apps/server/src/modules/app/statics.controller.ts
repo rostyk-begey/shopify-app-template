@@ -14,6 +14,7 @@ import { readFileSync } from 'fs';
 import { AuthService } from '../auth/auth.service';
 import { AppService } from './app.service';
 import { ConfigService } from '@nestjs/config';
+import { API_ROUTES } from '@google-shopify-crs/shared';
 
 @Controller()
 export class StaticsController {
@@ -21,15 +22,13 @@ export class StaticsController {
 
   constructor(
     private readonly appService: AppService,
-
     private readonly authService: AuthService,
-
     private readonly configService: ConfigService,
   ) {
     this.staticsPath = configService.get('staticsPath', { infer: true });
   }
 
-  @Get('/')
+  @Get(API_ROUTES.HOME)
   async index(@Req() req, @Res() res) {
     if (typeof req.query.shop !== 'string') {
       throw new HttpException(

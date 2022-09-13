@@ -28,7 +28,6 @@ export type BillingConfig = {
 export type Config = {
   production: boolean;
   port: number;
-  dbPath: string;
   staticsPath: string;
   useOnlineTokens: boolean;
   shopify: ShopifyConfig;

@@ -1,3 +1,3 @@
 # This file stores configurations for your Shopify app.
-name = "Google Cloud Retail Search"
-scopes = "read_products,write_products,read_script_tags"
+name = "Shopify App Template"
+scopes = "read_products,write_products"

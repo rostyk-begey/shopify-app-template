@@ -32,13 +32,6 @@ npm install -g @nrwl/nx
 yarn install
 ```
 
-### Prepare server database <a id="prepare-server-database"></a>
-
-```sh
-# Bootstrap session storage for shopify
-touch apps/server/database.sqlite
-```
-
 ---
 
 ## Contribution flow <a id="contribution-flow"></a>

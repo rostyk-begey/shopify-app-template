@@ -14,7 +14,7 @@ import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-  private readonly path = API_ROUTES.WEBHOOKS.INDEX;
+  private readonly path = API_ROUTES.WEBHOOKS;
 
   private readonly logger = new Logger(AppController.name);
 
@@ -22,7 +22,7 @@ export class AppController {
     this.setupWebhooks();
   }
 
-  @Post(API_ROUTES.WEBHOOKS.INDEX)
+  @Post(API_ROUTES.WEBHOOKS)
   async webhooks(@Req() req, @Res() res) {
     try {
       await Shopify.Webhooks.Registry.process(req, res);

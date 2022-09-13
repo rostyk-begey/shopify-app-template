@@ -1,4 +1,0 @@
-type="backend"
-
-[commands]
-dev = "nx run server:serve"

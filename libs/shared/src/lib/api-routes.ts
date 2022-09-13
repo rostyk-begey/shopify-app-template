@@ -1,8 +1,6 @@
 export const API_ROUTES = {
   HOME: '/',
-  WEBHOOKS: {
-    INDEX: '/api/webhooks',
-  },
+  WEBHOOKS: '/api/webhooks',
   AUTH: {
     INDEX: '/api/auth',
     CALLBACK: '/api/auth/callback',

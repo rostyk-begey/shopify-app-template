@@ -10,7 +10,7 @@ export const useRoutes = (pages: RoutePages): Route[] =>
   Object.keys(pages)
     .map((key) => {
       let path = key
-        .replace('../pages', '')
+        .replace('./pages', '')
         .replace(/\.(t|j)sx?$/, '')
         /**
          * Replace /index with /
